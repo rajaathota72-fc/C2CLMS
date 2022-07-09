@@ -170,9 +170,77 @@ try:
         if main_menu == "Community Arena":
             st.image("Images/coming-soon.png")
         if main_menu == "Course Content":
-            st.image("Images/coming-soon.png")
-            st.info("But let's try to build an AI system before we end !")
+            with st.sidebar:
+                menu = option_menu("Course menu", ['What do I learn', "AI around us", "Teachable Machine",
+                                                   "Let's create a sign language", "Face Recognition",
+                                                   "Challenge : Build your own use case"],
+                                   menu_icon="menu-button-fill",
+                                   icons=["", "", "", "",
+                                          "", "cloud-upload-fill"], default_index=0,
+                                   styles={"nav-link-selected": {"background-color": "#0ea2bd"}})
+            if menu == "What do I learn":
+                st.markdown("<h3 style='text-align:center; color: #0ea2bd;'>1. Learning outcomes</h3>",
+                            unsafe_allow_html=True)
+                st.markdown("___")
+                cols = st.columns([2, 5])
+                cols[0].image("Images/learningoutcomes.png", width=220)
+                cols[1].markdown("<h5>By the end of this module, you will learn: </h5>", unsafe_allow_html=True)
+                cols[1].markdown(" 1. What is AI ?")
+                cols[1].markdown(" 2. AI around us and use cases")
+                cols[1].markdown(" 3. Build AI usecases using teachable machine")
+                cols[1].markdown(" 4. Solve a real world challenge using AI and publish it.")
+            if menu == "AI around us":
+                st.markdown("<h3 style='text-align:center; color: #0ea2bd;'>2.Let's explore AI around us </h3>",
+                            unsafe_allow_html=True)
+                st.markdown("___")
+                st.markdown(
+                    "AI can be defined as a technology that makes computers to mimic human brain by continous training.")
+                st.info(
+                    "Activity 1: Think of AI examples around you and list down any five of them. Work with your partner!")
 
+                if st.checkbox("Click here for possible answers"):
+                    st.markdown("1. Digital Assistants like Siri, Google Assistant and Alexa.")
+                    st.markdown("2. Face recognition in snapchat, tiktok to apply right filters.")
+                    st.markdown("3. Robots")
+                    st.markdown("4. Self driving cars and automated parking.")
+                    st.markdown("5. Video games.")
+                st.info("Activity 2: Define AI in your own words!")
+            if menu == "Teachable Machine":
+                st.markdown("<h3 style='text-align:center; color: #0ea2bd;'>3. Teachable Machine</h3>",
+                            unsafe_allow_html=True)
+                st.markdown("___")
+                st.info("Activity 3: Let's explore the tool to build our AI.")
+                st.video("https://www.youtube.com/watch?time_continue=2&v=T2qQGqZxkD0&feature=emb_logo")
+                st.write("click here to explore [Teachable Machine](https://teachablemachine.withgoogle.com/)")
+                st.markdown("You can download the application from the store. Find the reference below")
+                st.image("Images/AI/app.jpeg", use_column_width=True)
+            if menu == "Let's create a sign language":
+                st.markdown("<h3 style='text-align:center; color: #0ea2bd;'>4. Hands on with Teachable machine</h3>",
+                            unsafe_allow_html=True)
+                st.markdown("___")
+                st.info("Activity 4: Follow the steps to build your sign language")
+                st.markdown(
+                    "1. Open the application or the tab on the web page.If you are on webpage, click on get started to view the page as shown.")
+                st.image("Images/AI/0.png", use_column_width=True)
+                st.markdown("2.Click on Image project.")
+                st.image("Images/AI/1.jpeg", use_column_width=True)
+                st.markdown("3.Select Standard image model.")
+                st.image("Images/AI/2.jpeg", use_column_width=True)
+                st.markdown("4.The project set up is done and lets start building the model.")
+                st.image("Images/AI/4.jpeg", use_column_width=True)
+                st.markdown("Follow the instructor for further steps")
+            if menu == "Face Recognition":
+                st.markdown("<h3 style='text-align:center; color: #0ea2bd;'>5. Let's build a Face Recognition model</h3>",
+                            unsafe_allow_html=True)
+                st.markdown("___")
+                st.info("Activity 5: Follow the steps from previous activity and replace objects by face of person")
+                st.image("Images/AI/img_1.png", use_column_width=True)
+            if menu == "Challenge : Build your own use case":
+                st.markdown("<h3 style='text-align:center; color: #0ea2bd;'>6. Time for challenge</h3>",
+                    unsafe_allow_html=True)
+                st.markdown("___")
+                st.info("Challenge 1: Try to think about a problem that you would solve using Teachable machine and build it. Best project will take the goodies.")
+                st.image("Images/AI/prize.png", use_column_width=True)
 
 except:
     st.markdown("")
