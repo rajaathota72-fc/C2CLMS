@@ -62,6 +62,8 @@ try:
             with st.expander("Appreciation by Instructors"):
                 for i in result_login[0]["Appreciation"]:
                     st.markdown(i)
+        if main_menu == "Community Arena":
+            st.image("Images/coming-soon.png")
         if main_menu == "Course Content":
             with st.sidebar:
                 menu = option_menu("Course menu", ['What do I learn', "Let's take good photos", "Basics of Photography",
@@ -148,8 +150,28 @@ try:
             if menu == "Challenge : Create & Publish":
                 st.markdown("<h3 style='text-align:center; color: #0ea2bd;'>6. Time for the challenge !</h3>",unsafe_allow_html=True)
                 st.markdown("___")
-                st.info("Challenge 1 : Create a stop motion animation on your own, edit it and upload to the portal in Community Arena.")
-
+                st.info("Challenge 1 : Create a stop motion animation on your own, edit it and upload the video to google form mentioned below.")
+                st.markdown("Here are some instructions")
+                st.markdown("1. Use any of the objects on table to create your animation - objects include mini toys sticky notes, clay and lego bricks.")
+                st.markdown("2. Plan a small concept around the chosen object.")
+                st.markdown("3. Decide the place to shoot and work with your partner to complete the task of shooting the frames.")
+                st.markdown("4. Edit the movie - add credits, music or voice over to make your movie a masterpiece. Export the video to your device.")
+                st.markdown("5. Click on the link below and upload the video with your details.")
+                st.write("click here [Upload the animation](https://forms.gle/bjmSUJZbsgJu87jc8)")
+    if course_menu == "Artificial Intelligence":
+        main_menu = option_menu("", ["My Profile", "Course Content", "Community Arena"],
+                                icons=["person-fill", "journal-album", "chat-quote"], default_index=1,
+                                styles={"nav-link-selected": {"background-color": "#0ea2bd"}}, orientation="horizontal")
+        if main_menu == "My Profile":
+            profile.display(profile_details=result_login[0],rating=result_login[0]["AIR"],rewards=result_login[0]["AIXP"])
+            with st.expander("Appreciation by Instructors"):
+                for i in result_login[0]["Appreciation"]:
+                    st.markdown(i)
+        if main_menu == "Community Arena":
+            st.image("Images/coming-soon.png")
+        if main_menu == "Course Content":
+            st.image("Images/coming-soon.png")
+            st.info("But let's try to build an AI system before we end !")
 
 
 except:
